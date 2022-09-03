@@ -1,0 +1,25 @@
+.centered
+{
+    text-align: center;
+}
+.large
+{
+    color: #ff0000;
+    font-size: large;
+}
+.medium
+{
+    font-size: medium;
+}
+.small
+{
+    font-size: small;
+}
+a{
+    color: #ff0000;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
