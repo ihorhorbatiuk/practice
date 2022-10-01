@@ -1,0 +1,36 @@
+html {
+    font-family: sans-serif;
+  
+  }
+  body {
+    min-height: 600px;
+  }
+  
+  
+  /* Your CSS below here */
+
+.box {
+   
+   border: 1px solid rgb(105, 0, 0);
+   border-radius: 10px;
+   max-width: 250px;
+   min-height: 150px;
+   margin: 0px auto;
+   background-color: rgba(255, 0, 0, 1);
+   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 30%); 
+   box-shadow: 2px 2px 5px #000, inset 2px 2px 1px rgba(255, 255, 255, 0.5), inset -2px -2px 1px rgba(0, 0, 0, 0.5);
+   position: relative;
+}
+
+.content {
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.1rem; /* with devtools check the font-size of root element which is standard 16px, so by the task to fit 17-18px i used 1.1rem*/
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 1px #000;
+}
