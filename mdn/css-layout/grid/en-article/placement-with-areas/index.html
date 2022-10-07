@@ -16,9 +16,9 @@
         display: grid;
         grid-template-areas:
            "header header"
-           "sidebar content"
-           "sidebar footer" ;
-        grid-template-columns: 1fr 3fr;
+           "content sidebar"
+           "footer footer" ;
+        grid-template-columns: 3fr 1fr;
         gap: 20px;
       }
 
@@ -32,7 +32,8 @@
       }
 
       aside {
-        border-right: 1px solid #999;
+        padding-left: 1em;
+        border-left: 1px solid #999;
       }
       
       header {
