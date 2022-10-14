@@ -1,0 +1,19 @@
+// JS goes here
+//Function: creates a new paragraph and appears it  in the bottom of html body element.
+    function createParagraph() {
+        const para = document.createElement("p");
+        para.textContent = "You clicked the button!";
+        document.body.appendChild(para);
+    }
+ /*
+    1. Get references to all the buttons on the page in an array format.
+    2. Start the loop through all the buttons and add click event listener to each one. 
+
+    When any button is pressed, the createParagraph function will be run.
+*/
+    
+    const buttons = document.querySelectorAll("button");
+
+    for (const button of buttons) {
+        button.addEventListener("click", createParagraph);
+    }
