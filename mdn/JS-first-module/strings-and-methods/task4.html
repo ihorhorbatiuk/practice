@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Strings: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    /*
+    In the final string task, we have given you the name of a theorem, two numeric values, and an incomplete string (the bits that need adding are marked with asterisks (*)).
+     We want you to change the value of the string as follows:
+
+    Change it from a regular string literal into a template literal.
+    Replace the four asterisks with four template literal placeholders. These should be:
+    The name of the theorem.
+    The two number values we have.
+    The length of the hypotenuse of a right-angled triangle, given that the two other side lengths are the same as the two values we have. 
+    You'll need to look up how to calculate this from what you have. Do the calculation inside the placeholder.
+    */
+    const theorem = 'Pythagorean theorem';
+
+    const a = 5;
+    const b = 8;
+
+    const myString = `Using ${theorem}, we can work out that that if the two shortest sides of
+a right-angled triangle have lengths of ${a} and ${b}, the length of the hypotenuse is approximately ${Math.sqrt(((a ** 2) + (b ** 2))).toFixed(2)}.`;
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    const para1 = document.createElement('p');
+    para1.textContent = myString;
+    section.appendChild(para1);
+  </script>
+
+</html>
