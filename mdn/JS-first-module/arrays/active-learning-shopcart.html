@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Array learning</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        li {
+            background-color: aqua;
+        }
+        p {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="output">
+        <ul></ul>
+        <p></p>
+    </section>
+<script>
+    /*
+    Let's return to the example we described earlier — printing out product names and prices on an invoice, then totaling the prices and printing them at the bottom.
+     In the editable example below there are comments containing numbers — each of these marks a place where you have to add something to the code. They are as follows:
+
+    Below the // number 1 comment are a number of strings, each one containing a product name and price separated by a colon. 
+    We'd like you to turn this into an array and store it in an array called products.
+
+    Below the // number 2 comment, start a for...of() loop to go through every item in the products array.
+
+    Below the // number 3 comment we want you to write a line of code that splits the current array item (name:price) into two separate items,
+    one containing just the name and one containing just the price.
+
+    As part of the above line of code, you'll also want to convert the price from a string to a number.
+
+    There is a variable called total that is created and given a value of 0 at the top of the code. 
+    Inside the loop (below // number 4) we want you to add a line that adds the current item price to that total in each iteration of the loop, 
+    so that at the end of the code the correct total is printed onto the invoice.
+
+    We want you to change the line just below // number 5 
+    so that the itemText variable is made equal to "current item name — $current item price", for example "Shoes — $23.99" in each case, 
+    so the correct information for each item is printed on the invoice.
+    
+    Finally, below the // number 6 comment, you'll need to add a } to mark the end of the for...of() loop.
+    */
+const list = document.querySelector('.output ul');
+const totalBox = document.querySelector('.output p');
+let total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
+// number 1
+      const products = ['Underpants:6.99',
+                'Socks:5.99',
+                'T-shirt:14.99',
+                'Trousers:31.99',
+                'Shoes:23.99'];
+
+// number 2
+for (const product of products) {
+  // number 3
+const subArray = product.split(':');
+const name = [];
+name.push(subArray[0]);
+const price = [];
+price.push(Number(subArray[1])); 
+  // number 4
+total += price[0];
+  // number 5
+  let itemText = `${name} — \$${price}`;
+
+  const listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
+
+// number 6
+};
+totalBox.textContent = 'Total: $' + total.toFixed(2);
+</script>
+</body>
+</html>

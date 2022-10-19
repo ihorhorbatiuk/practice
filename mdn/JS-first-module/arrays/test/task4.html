@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    const birds = [ "Parrots", "Falcons", "Eagles", "Emus", "Caracaras", "Egrets" ];
+
+    /*
+    For this array task, we provide you with a starting array listing the names of some birds.
+
+    Find the index of the "Eagles" item, and use that to remove the "Eagles" item.
+
+    Make a new array from this one, called eBirds, that contains only birds from the original array whose names begin with the letter "E". 
+    Note that startsWith() is a great way to check whether a string starts with a given character.
+    
+    If it works, you should see "Emus,Egrets" appear in the page.
+    */
+
+    // Add your code here
+    function checkBird (bird) {
+
+        return bird.startsWith('E');
+    
+    }
+
+    const index = birds.indexOf('Eagles');
+
+    birds.splice(index, 1);
+
+    const eBirds = birds.filter(checkBird);
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    const para1 = document.createElement('p');
+    para1.textContent = eBirds;
+
+    section.appendChild(para1);
+  </script>
+
+</html>
