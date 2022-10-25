@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    /* 
+    For the final task you are given four variables:
+
+    machineActive — contains an indicator of whether the login machine is switched on or not (true/false).
+    pwd — Contains the user's login password.
+    machineResult — begins uninitialized, but is later used to store a response that will be printed to the output panel, letting the user know whether the machine is switched on.
+    pwdResult — begins uninitialized, but is later used to store a response that will be printed to the output panel, letting the user know whether their login attempt was successful.
+
+    We'd like you to create an if...else structure that checks whether the machine is switched on 
+    and puts a message into the machineResult variable telling the user whether it is on or off.
+
+    If the machine is on, we also want a second conditional to run that checks whether the pwd is equal to cheese. 
+    If so, it should assign a string to pwdResult telling the user they logged in successfully. 
+    If not, it should assign a different string to pwdResult telling the user their login attempt was not successful. 
+    We'd like you to do this in a single line, using something that isn't an if...else structure.
+    */
+
+    //The same like for previous tasks i create my own button to control machineActive status from browser, but now it is asking for password prompt, checks if the password is right
+    //and if yes starting the machine. task to don't use if...else statement for password check you can see on line 70 
+    let machineResult;
+    let pwdResult;
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+
+    para1.textContent = 'Machine is stopped';
+    para2.textContent = 'Turn on the machine';
+
+    let machineActive = false;
+    let pwd = 'cheese';
+    let machineButton = document.createElement('button');
+    machineButton.type = 'button';
+
+    machineButton.textContent = 'Start Machine';
+
+    machineButton.addEventListener('click', () => {
+
+      if (machineActive == false) {
+        let userPwd = '';
+        userPwd = prompt('Write your password:');
+
+        //according to MDN task we don't use here if...else statement to check the password and go for ternary operator instead
+        pwd === userPwd ? pwdResult = 'LogIn is successful.' : pwdResult = 'Wrong Password'; 
+        
+        if (pwdResult === 'LogIn is successful.') {
+        machineActive = true;
+        machineResult = 'Machine is active';
+        machineButton.textContent = 'Stop Machine';
+        para1.textContent = machineResult;
+        para2.textContent = pwdResult;
+        } else {
+            machineResult = 'Machine is off';
+            machineButton.textContent = 'Access denied';
+            para1.textContent = machineResult;
+            para2.textContent = pwdResult;
+        }
+      } else {
+        machineActive = false; 
+        machineButton.textContent = 'Start Machine';
+        para1.textContent = 'Machine is stopped';
+        para2.textContent = 'Turn on the machine';
+       }
+    })
+
+    
+
+   
+
+    const section = document.querySelector('section');
+
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+    section.appendChild(machineButton);
+  </script>
+
+</html>
