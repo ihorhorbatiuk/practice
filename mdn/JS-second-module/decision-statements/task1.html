@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview"></section>
+
+  </body>
+  
+  
+  <script>
+    /* In this task you are provided with two variables:
+
+season — contains a string that says what the current season is.
+response — begins uninitialized, but is later used to store a response that will be printed to the output panel.
+
+We want you to create a conditional that checks whether season contains the string "summer", 
+and if so assigns a string to response that gives the user an appropriate message about the season. 
+If not, it should assign a generic string to response that tells the user we don't know what season it is.
+
+To finish off, you should then add another test that checks whether season contains the string "winter", and again assigns an appropriate string to response.
+ */ 
+
+    let seasons = ['summer', 'winter', 'newSeason'];
+    let season; 
+    function randomSeason () {
+        season = seasons[Math.floor(Math.random()* seasons.length)];
+        return season;
+    }
+    let response;
+    randomSeason();
+
+    // Add your code here
+    if (season === 'summer') {
+        response = 'This is a summer season outside. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+    } else if (season === 'winter') {
+        response = 'This is a winter season outside. Wear warm clothes or even better take a blanket and stay warm at home';
+    } 
+    else {
+        response = 'We don\'t know what the season is. Try to update page latter';
+    }
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    para1.textContent = response;
+    section.appendChild(para1);
+    
+  </script>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview"></section>
+
+  </body>
+  
+  
+  <script>
+   /*
+   You need to create an if...else structure that checks whether the machine is switched on and puts a message into the response variable if it isn't, 
+   telling the user to switch the machine on.
+   */
+
+   //for this task i wrote my own functions and create a button. Because raw code and task from mdn online code editor can be controlled only by changing this script directly
+   //by reassigning new value for machineActive variable. I change it to be controlled by user from browser page, just by clicking on button provided.
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+
+    para1.textContent = 'Machine is stopped';
+    para2.textContent = 'Turn on the machine';
+
+    let response;
+
+    let score = 0;
+
+    let machineActive = false;
+
+    let machineButton = document.createElement('button');
+    machineButton.type = 'button';
+
+    machineButton.textContent = 'Start Machine';
+
+    machineButton.addEventListener('click', () => {
+
+      if (machineActive == false) {
+        machineActive = true;
+        machineButton.textContent = 'Stop Machine'; 
+        score = Math.floor(Math.random()* 100) + 1;
+        para1.textContent = `Your score is ${ score }`; 
+        responseMassage();
+
+      } else {
+        machineActive = false; 
+        machineButton.textContent = 'Start Machine';
+        para1.textContent = 'Machine is stopped';
+        para2.textContent = 'Turn on the machine';
+       }
+    })
+   
+   function responseMassage () {
+
+    if (machineActive === true) {
+
+        if (score >= 0 && score <= 19 ) {
+            response = 'That was a terrible score — total fail!';
+
+        } else if (score >= 20 && score <= 39) {
+           response = 'You know some things, but it\'s a pretty bad score. Needs improvement.';
+
+        } else if (score >= 40 && score <= 69) {
+           response = 'You did a passable job, not bad!';
+
+        } else if (score >= 70 && score <= 89) {
+           response = 'That\'s a great score, you really know your stuff.';
+
+        } else if (score >= 90 && score <= 100) {
+           score = 'What an amazing score! Did you cheat? Are you for real?';
+
+        } else {
+           response = 'This is not possible, an error has occurred.';
+        }
+
+    } else {
+       score = 'not started',
+      response = 'Turn on the machine';
+    }
+
+    para2.textContent = response;
+  }
+
+    const section = document.querySelector('section');
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+    section.appendChild(machineButton);
+  </script>
+
+</html>
