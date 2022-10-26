@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    const myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+    const list = document.createElement('ul');
+
+    /* 
+    In our first looping task we want you to start by creating a simple loop that goes through all the items in the provided myArray 
+    and prints them out on the screen inside list items (i.e., <li> elements), which are appended to the provided list.
+    */
+
+    // Add your code here
+    for (const thing of myArray) {
+        const myItem = document.createElement('li');
+        myItem.textContent = thing;
+        list.appendChild(myItem);
+    }
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    section.appendChild(list);
+  </script>
+
+</html>
