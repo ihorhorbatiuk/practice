@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada'];
+    const para = document.createElement('p');
+
+    /* 
+    In this task, we have an array of names, and we're using Array.filter() to get an array of only names shorter than 5 characters. 
+    The filter is currently being passed a named function isShort() which checks the length of the name, returning true if the name is less than 5 characters long, 
+    and false otherwise.
+
+        function isShort(name) {
+            return name.length < 5;
+        }
+
+        const shortNames = names.filter(isShort);
+        para.textContent = shortNames;
+
+    We'd like you to change this into an arrow function. See how compact you can make it.
+    */
+  
+
+    const shortNames = names.filter( name => name.length < 5);
+    para.textContent = shortNames;
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    section.appendChild(para);
+  </script>
+
+</html>
