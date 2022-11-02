@@ -48,7 +48,17 @@
     const size = 30;
 
     drawCircle(x, y, size);
-
+    canvas.addEventListener('keydown', (event) => {
+        if (event.code === 'KeyW' && y > 30){
+            drawCircle(x, y = y - 10, size);
+        } else if (event.code === 'KeyS' && y < (canvas.height - 30)) {
+            drawCircle(x, y = y + 10, size);
+        } else if (event.code === 'KeyA' && x > 30) {
+            drawCircle(x = x - 10, y, size);
+        } else if (event.code === 'KeyD' && x < (canvas.width - 30)) {
+            drawCircle(x = x + 10, y, size);
+        }
+    })
     // Add your code here
 
   </script>
