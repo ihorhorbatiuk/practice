@@ -31,8 +31,29 @@
   <script>
     const btn = document.querySelector('.off');
 
+
+    /* 
+    In our first events-related task, you need to create a simple event handler that causes the text inside the button (btn) to change when it is clicked on, 
+    and change back when it is clicked again.
+
+    The HTML should not be changed; just the JavaScript.
+    */
+   
     // Add your code here
     
+    btn.addEventListener('click', () => {
+        if (btn.getAttribute('class') ==='off'){
+            btn.textContent = 'Machine is on';
+            btn.setAttribute('class', 'on');
+        } else {
+            btn.textContent = 'Machine is off';
+            btn.setAttribute('class', 'off');
+        }
+    })
+     
+
+    /* and second way to complete by checking text Content of the button 
+
     btn.addEventListener('click', () => {
         if (btn.textContent ==='Machine is off'){
             btn.textContent = 'Machine is on';
@@ -40,6 +61,7 @@
             btn.textContent = 'Machine is off';
         }
     })
+*/
   </script>
 
   </body>

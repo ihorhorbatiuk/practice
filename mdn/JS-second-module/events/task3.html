@@ -41,7 +41,24 @@
 
   const buttonBar = document.querySelector('.button-bar');
 
+  /*
+
+  In the next events-related task, you need to set an event listener on the <button>s' parent element (<div class="button-bar"> … </div>), 
+    which when invoked by clicking any of the buttons will set the background of the button-bar to the color contained in the button's data-color attribute.
+
+    We want you to solve this without looping through all the buttons and giving each one their own event listener.
+
+  */
+
   // Add your code here
+
+  buttonBar.addEventListener('click', (event) => {
+    let bgColor = event.target.getAttribute('data-color');
+    //condition to don't change background color back to white when is clicked on the div empty space. 
+     if (bgColor !== null) {
+    buttonBar.style.backgroundColor = bgColor;
+     }
+  });
 
   </script>
   </body>

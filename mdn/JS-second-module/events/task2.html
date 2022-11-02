@@ -48,6 +48,14 @@
     const size = 30;
 
     drawCircle(x, y, size);
+
+    /* 
+    Now we'll look at keyboard events. To pass this assessment you need to build an event handler that moves the circle around 
+     the provided canvas when the WASD keys are pressed on the keyboard. The circle is drawn with the function drawCircle()
+    */
+
+    // Add your code here
+
     canvas.addEventListener('keydown', (event) => {
         if (event.code === 'KeyW' && y > 30){
             drawCircle(x, y = y - 10, size);
@@ -59,7 +67,6 @@
             drawCircle(x = x + 10, y, size);
         }
     })
-    // Add your code here
 
   </script>
   </body>
