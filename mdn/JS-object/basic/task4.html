@@ -26,14 +26,27 @@
 
   </body>
   <script>
-    const cat = {
-      name : 'Bertie',
-      breed : 'Cymric',
-      color : 'white',
-      greeting: function() {
-        console.log('Meow!');
-      }
+    /*
+    In the code you wrote for Task 3, the greeting() method is defined twice, once for each cat. 
+    This isn't ideal (specifically, it violates a principle in programming sometimes called DRY or "Don't Repeat Yourself").
+
+    In this task we want you to improve the code so greeting() is only defined once, and every cat instance gets its own greeting() method. 
+    */
+   
+    function Greetings (name, breed, color) {
+        this.name = name;
+        this.breed = breed; 
+        this.color = color;
+        this.greeting = function () {
+            console.log(`Hello! said ${this.name} the ${this.breed}`);
+        }
     }
-  </script>
+
+    const cat = new Greetings('Bertie','Cymric','White');
+    const cat2 = new Greetings('Myke', 'Syamese', 'Brown');
+
+    console.log(cat.greeting());
+    console.log(cat2.greeting());
+</script>
 
 </html>
