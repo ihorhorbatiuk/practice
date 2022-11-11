@@ -39,13 +39,13 @@
     The values of these variables are then printed to the screen inside paragraphs.
 
     */
-   
+
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
     let motherInfo = 'The mother cats are called ';
-    let kittenInfo;
+    let kittenInfo = '';
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
     fetch(requestURL)
@@ -57,6 +57,43 @@
       let male = 0;
 
       // Add your code here
+
+        const catObj = JSON.parse(catString);
+        
+        for (const cat of catObj) {
+
+            if (catObj.length === catObj.indexOf(cat) + 1) {
+                motherInfo += `and ${cat.name}.`;
+            } else {
+                motherInfo += `${cat.name}, `;
+              };
+
+              for(const kitten of cat.kittens) {
+                total += 1;
+                if (kitten.gender === 'm') {
+                    male += 1;
+                    if (cat.kittens.indexOf(kitten) === 0) {
+                        kittenInfo += `The mother ${cat.name} has kittens named ${kitten.name} (male), `;
+                    } else if (cat.kittens.length === cat.kittens.indexOf(kitten) + 1) {
+                        kittenInfo += `and ${kitten.name}(male). `;
+                    } else {
+                        kittenInfo += `${kitten.name}(male), `;
+                    }
+                } else {
+
+                    if (cat.kittens.indexOf(kitten) === 0) {
+                        kittenInfo += `The mother ${cat.name} has kittens named ${kitten.name}(female), `;
+                    } else if (cat.kittens.length === cat.kittens.indexOf(kitten) + 1) {
+                        kittenInfo += `and ${kitten.name}(female). 
+                         `;
+                    } else {
+                        kittenInfo += `${kitten.name}(female), `;
+                    }
+            }
+            
+              }
+    }
+    kittenInfo += `So in total we have ${total} kittens and ${male} of them is males, and ${total - male} is females.`;
 
       // Don't edit the code below here!
 
