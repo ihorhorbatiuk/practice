@@ -2,38 +2,39 @@
 <html lang="en">
     <head> 
         <meta charset="utf-8">
-        <title>Барбершоп</title>
+        <title>Your Barbershop</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header class="">
-            <div class="">
+        <header class="main-header">
+            <div class="container">
                 <nav class="main-navigation">
                     <ul>
                         <li>
-                            <a href="#">Главная</a>
+                            <a href="#">Info</a>
                         </li>
                         <li>
-                            <a href="#">Новости</a>
+                            <a href="#">News</a>
                         </li>
                         <li>
-                            <a href="#">Прайс-лист</a>
+                            <a href="#">Price</a>
                         </li>
                         <li>
-                            <a href="#">Магазин</a>
+                            <a href="#">Shop</a>
                         </li>
                         <li>
-                            <a href="#">Контакты</a>
+                            <a href="#">Contacts</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="user-block">
-                    <a class="login" href="#">Вход</a>
+                    <a class="login" href="#">Log In</a>
                 </div>
             </div>
         </header>
         <main class="container">
             <div class="index-logo">
-                <img src="img/logo.png" width="333" height="198" alt="Барбершоп">
+                <img src="img/barber-logo.png" alt="BarberLogo">
             </div>
             <section class="features">
                 <div class="features-item">
@@ -44,7 +45,7 @@
                     <b class="features-name">Индивидуально</b>
                     <p>Система записи клиентов построена таким образом, что вы автоматитечки будете привязаны именно за своим мастером. Что упрощает и ускоряет процесс планированния визитов</p>
                 </div>
-                <div class="feature-item">
+                <div class="features-item">
                     <b class="features-name">Комплексно</b>
                     <p>Наличие новейшего оборудованния позволяет увеличить спектр услуг, предоставляемый нашим барбершопом. Комплексные услуги экономят ваше время и вы всегда можете быть уверенны в качестве.</p>
                 </div>
@@ -83,7 +84,7 @@
                     <div class="index-content-right">
                         <h2 class="index-content-title">Записаться</h2> 
                         <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
-                        <form class="apoinment-form" action="setver url" method="post">
+                        <form class="apoinment-form" action="server url" method="post">
                             <input type="text" name="date" value="" placeholder="Дата"><label for="date">Дата</label>
                             <input type="text" name="time" value="" placeholder="Время"><label for="time">Время</label>
                             <input type="text" name="name" value="" placeholder="Ваше имя"><label for="name">Ваше имя</label>
@@ -95,17 +96,20 @@
         </main>
         <footer class="main-footer">
             <div class="container">
-                <div class="footer-contcts">
-                    Наши контакты
+                <div class="footer-contacts">
+                    Наши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контактыНаши контакты
                 </div>
                 <div class="footer-social">
-                    <p>Инст, фейс, тикток</p>
-                    <a class="social-btn social-btn-inst" href="#">Инст</a>
-                    <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
-                    <a class="social-btn social-btn-tt" href="#">Тикток</a>
+                    <p>Our Socials</p>
+                    <div class="social--icons">
+                        <a class="social-btn social-btn-inst" href="#">i</a>
+                        <a class="social-btn social-btn-fb" href="#">f</a>
+                        <a class="social-btn social-btn-tt" href="#">t</a>
+                    </div>
                 </div>
                 <div class="footer-copyright">
-                    Все права защищены
+                    <p>Developer</p>
+                    <a class="footer-developer" href="#">I'm</a>
                 </div>
             </div>
         </footer>
