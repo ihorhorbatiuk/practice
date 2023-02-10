@@ -1,0 +1,49 @@
+/*https://venngage.com/blog/landing-page-examples/*/
+
+/*max-width: 900px;*/
+body {
+    width: 99%;
+    margin: 2em auto;
+    font: .9em/1.2 Arial, Helvetica, sans-serif;
+    background-color: rgb(211, 204, 146);
+}
+
+header {
+    width: 100%;
+    background-color: rgba(14, 20, 43, 0.85);
+    border-radius: 10px;
+}
+
+.main-header {
+    min-height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-size: 2.7em;
+    color: rgb(207, 214, 234);
+    text-shadow: 2px 2px 6px;
+    border-right: 5px solid rgb(207, 214, 234);
+    border-radius: 0 25px 25px 0;
+}
+
+nav ul {
+    display: flex;
+    margin-left: 10%;
+    padding-left: 15%;
+    justify-content: space-around;
+}
+
+nav ul li {
+    font-size: 1.75em;
+    color: rgb(67, 112, 236);
+    text-shadow: 1px 1px 1px;
+    letter-spacing: 3px;
+}
+
+header img {
+    width: 100%;
+    filter: drop-shadow(5px 5px 10px rgb(207, 214, 234)) ;
+}
