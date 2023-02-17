@@ -9,19 +9,28 @@
         }
         .video-container {
             border: 3px slateblue;
-            margin: 5px;
+            margin: 0 auto;
             padding: 2px;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.26);
+            width: fit-content;
+            border-radius: 22px;
+        }
+        video{
+            border-radius: 20px;
         }
         .audio-container {
             border: 9px solid seagreen;
+            margin: 0 auto;
+            width: fit-content;
+            border-radius: 50px;
         }
+        
         </style>
     </head>
     <body>
         <main>
             <h1>Video nad audio features example</h1>
-            <div class="video-container"><video controls width="400" height="400"
+            <div class="video-container"><video controls width="400px" height="400px"
                     autoplay loop muted preload="metadata"
                     poster="poster.png">
                 <source src="rabbit320.mp4" type="video/mp4">
